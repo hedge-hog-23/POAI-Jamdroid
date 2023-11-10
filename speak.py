@@ -30,15 +30,15 @@ def listen():
         return ""
 
 def open_application(application_name):
-    # Dictionary mapping common application names to their executable paths
+    # replace with your file name or paths
     application_paths = {
         "notepad": "notepad.exe",
         "chrome": r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
         "figma": r"C:\Users\Senth\AppData\Local\Figma\Figma.exe"
     }
 
-    # Check if the specified application is in the dictionary
-    if application_name in application_paths:
+    
+    if application_name in application_paths: #checking if file exists
         try:
             app_path = application_paths[application_name]
             subprocess.Popen([app_path], shell=True)
@@ -60,7 +60,7 @@ def open_application(application_name):
         speak(f"Sorry, I don't know how to open {application_name}")
 
 def run_python_script(file_name):
-    file_path = f"D:\\POAI_proj\\OpenCVProjects\\{file_name}.py"
+    file_path = f"D:\\POAI_proj\\OpenCVProjects\\{file_name}.py" # change this path too !!
     os.system(f"python {file_path}")
 def search(query):
     sanitized_query = "+".join(query.split())
